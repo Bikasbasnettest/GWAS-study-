@@ -3,15 +3,15 @@ source("http://zzlab.net/GAPIT/GAPIT.library.R")
 source("http://zzlab.net/GAPIT/gapit_functions.txt")
 
 #Importing Genotyping data/ here we add the head is false for the Half map file
-myG<-read.table("E:/GWAS study file in R/Watkins_axiom35k_genotype_for_Tassel.hmp.txt",head = FALSE)
-myG
+Genotype<-read.table("E:/GWAS study file in R/Watkins_axiom35k_genotype_for_Tassel.hmp.txt",head = FALSE)
+Genotype
 #Import Phenotyping data
-myY <- read.table("E:/GWAS study file in R/Watkins_phenotype_H2006_for_Tassel.txt", head = TRUE)
-myY
+Phenotype<- read.table("E:/GWAS study file in R/Watkins_phenotype_H2006_for_Tassel.txt", head = TRUE)
+Phenotype
 #Running GWAS
 myGAPIT<-GAPIT(
-  Y=myY,
-  G=myG,
+  Y=Genotype,
+  G=Phenotype,
   PCA.total=5,
   SNP.MAF =0.05,
   Multiple_analysis = TRUE,
